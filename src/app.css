@@ -1,0 +1,23 @@
+.apex-app{
+  display: flex;
+  min-height: 100vh;
+}
+
+.apex-main{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.apex-content{
+  padding: 40px;
+}
+.section-title{
+  margin-bottom: 25px;
+  border-left: 4px solid red;
+  padding-left: 10px;
+}
+.apex-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}

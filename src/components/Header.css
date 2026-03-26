@@ -1,0 +1,82 @@
+.apex-header{
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    background-color: #020617;
+    border-bottom: 1px solid #1e293b;
+}
+
+.user-info h3{
+    font-size: 1.1rem;
+}
+
+.user-info p{
+    font-size: 0.75rem;
+    color: #94a3d8;
+}
+
+.destaque{
+    color: #7c3aed;
+}
+
+.badge{
+    background-color: rgba(124, 58, 237, 0.1);
+    color: #fbbf24;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid #fbbf24;
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.notificacoes{
+    background: transparent;
+    border:none;
+    color: #94a3d8;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.notificacoes:hover{
+    color: #7c3aed;
+}
+
+.header-actions{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.logo{
+    color: #7c3aed;
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+}
+header {
+  display: flex;
+  align-items: center; /* Alinha verticalmente ao centro */
+  justify-content: space-between; /* Distribui logo, menu e user-info */
+  padding: 10px 20px;
+  background-color: #121212; /* Cor do seu fundo atual */
+}
+
+.nav-menu {
+  display: flex; /* Faz os itens ficarem um ao lado do outro */
+  gap: 20px; /* Espaçamento entre os links */
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espaço entre o ícone e o texto */
+}
