@@ -1,5 +1,5 @@
 import './Card.css';
-import { Play } from 'lucide-react';
+
 
 export function CarrosCard({ title, category, banner, price }) {
   return (
@@ -9,7 +9,7 @@ export function CarrosCard({ title, category, banner, price }) {
         <div className="card-content">
             <h4>{title}</h4>
             <p>{category}</p>
-            <h3>price</h3>
+            <h4>{price}</h4>
             <button className='buy-btn'>
               <h3>Comprar</h3>
             </button>

@@ -6,66 +6,80 @@ import skyline from '../assets/SkylineR35.jpg';
 import subaru from '../assets/subaru.jpg';
 import audiR8 from '../assets/AudiR8.jpg';
 import dodgeViper from '../assets/dodge.jpg';
+import porsche from '../assets/PORSCHE-911.jpg';
+import Lamborghini from '../assets/Lamborghini-huracan.jpg';
 
-
-
-export const gamesData = [
+export const carrosData = [
   {
-    id:'1',
+    id:1,
     banner: mazda,
     title: 'Mazda RX7',
     category: 'Sport',
-    price: { value: 'R$ 150.000,00' },
+    price: 'R$ 150.000,00' 
     
   },
   {
-    id:'2',
+    id:2,
     banner: AudiTT,
     title: 'Audi TT',
     category: 'Luxury',
-    price: { value: 'R$ 300.000,00' },
+    price:  'R$ 300.000,00' 
   },
   {
-    id:'3',
+    id:3,
     banner: Volvo,
     title: 'Volvo XC90',
     category: 'SUV',
-    price: { value: 'R$ 400.000,00' },
+    price: 'R$ 400.000,00' 
 
   },
   {
-    id:'4',
+    id:4,
     banner: mercedes,
     title: 'Mercedes-Benz GLE',
     category: 'Luxury',
-    price: { value: 'R$ 500.000,00' },
+    price: 'R$ 500.000,00' 
   },
   {
-    id:'5',
+    id:5,
     banner: skyline,
     title: 'Nissan Skyline GT-R',
     category: 'Sport',
-    price: { value: 'R$ 200.000,00' },
+    price:  'R$ 200.000,00' 
   },
   {
-    id:'6',
+    id:6,
     banner: subaru,
     title: 'Subaru WRX STI',
     category: 'Sport',
-    price: { value: 'R$ 300.000,00' },
+    price:  'R$ 300.000,00' 
   },
   {
-    id:'7',
+    id:7,
     banner: audiR8,
     title: 'Audi R8',
     category: 'Luxury',
-    price: { value: 'R$ 1.000.000,00' },
+    price:  'R$ 1.000.000,00' 
   },
   {
-    id:'8',
+    id:8,
     banner: dodgeViper,
     title: 'Dodge Viper',
     category: 'Sport',
-    price: { value: 'R$ 600.000,00' },
+    price: 'R$ 600.000,00' 
   },
+  {
+    id:9,
+    banner: porsche,
+    title: 'Porsche 911',
+    category: 'Luxury',
+    price: 'R$ 1.500.000,00'
+  },
+  {
+    id:10,
+    banner: Lamborghini,
+    title: 'Lamborghini Huracán',
+    category: 'Luxury',
+    price: 'R$ 2.000.000,00'
+  }
 ];
