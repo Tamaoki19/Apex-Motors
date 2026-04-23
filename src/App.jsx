@@ -1,8 +1,10 @@
 
-import { useState } from 'react'; 
+import { useEffect, useState } from 'react'; 
 import { Header } from './components/Header';
 import { CarrosCard } from './components/Card';
 import { carrosData } from './data/carros';
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./App.css";
 
 function App() {
@@ -10,11 +12,19 @@ function App() {
   const [search, setSearch] = useState('');
   const [activeTab, setActiveTab] = useState('dash');
 
-  const filtredCars = carrosData
-  .filter(() => activeTab === 'dash' )
-  .filter((car) =>
-    car.title.toLowerCase().includes(search.toLowerCase())
-  );
+  const filtredCars = activeTab === 'dash'
+  ? carrosData.filter((car) =>
+      car.title.toLowerCase().includes(search.toLowerCase())
+    )
+  : [];
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: "ease-in-out",
+      once: false,
+    });
+  }, []);
   return (
     <div className="apex-app">
       <main className="apex-main">
@@ -36,13 +46,14 @@ function App() {
           <div className="apex-grid">
             
             {filtredCars.length > 0 ? (
-              filtredCars.map((g) => (
+              filtredCars.map((g, index) => (
                 <CarrosCard
                   key={g.id}
                   title={g.title}
                   category={g.category}
                   banner={g.banner}
                   price={g.price}
+                  index={index}
                 />
               ))
             ) : (

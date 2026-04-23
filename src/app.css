@@ -21,9 +21,3 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
 }
-.textActive{
-  font-size: 18px;
-  color: #5d5d5d;
-  text-align: center;
-  margin-top: 50px;
-}

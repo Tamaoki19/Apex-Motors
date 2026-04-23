@@ -3,7 +3,10 @@ import './Card.css';
 
 export function CarrosCard({ title, category, banner, price }) {
   return (
-    <div className="apex-card">
+    <div className="apex-card"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
         <img src={banner} alt={title} className='card-img' />
 
         <div className="card-content">
