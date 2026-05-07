@@ -30,7 +30,7 @@ export function Header({ search, setSearch, openSearch, setOpenSearch, activeTab
                     )}
                 </div>
                 <div className={`nav-item ${activeTab === 'dash' ? 'active' : ''}`} onClick={() => setActiveTab('dash')}> <Tag size={20} />Carros disponíveis</div>
-                <div className={`nav-item ${activeTab === 'consultoria' ? 'active' : ''}`} onClick={() => setActiveTab('consultoria')}> <Smartphone size={20} />Consultoria</div>
+                <div className={`nav-item ${activeTab === 'favorites' ? 'active' : ''}`} onClick={() => setActiveTab('favorites')}> <Smartphone size={20} />Favoritos</div>
                 <div className={`nav-item ${activeTab === 'ajuda' ? 'active' : ''}`} onClick={() => setActiveTab('ajuda')}> <Info size={20} />Ajuda</div>
             </nav>
             <div className="header-actions">
