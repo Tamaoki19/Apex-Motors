@@ -1,24 +1,14 @@
-.apex-app{
-  display: flex;
-  min-height: 100vh;
-}
-
-.apex-main{
+.apex-main {
   flex: 1;
   display: flex;
   flex-direction: column;
-}
-.apex-content{
-  padding: 40px;
-}
-.section-title{
-  margin-bottom: 25px;
-  border-left: 4px solid red;
-  padding-left: 10px;
-}
-.apex-grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  min-width: 0; /* 👈 ISSO AQUI impede o Swiper de quebrar o Grid de baixo */
 }
 
+/* Garanta também que o container do slider esteja travado */
+.container-slider {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0; /* 👈 Segurança dupla */
+  margin-bottom: 30px;
+}

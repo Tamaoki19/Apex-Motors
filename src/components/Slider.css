@@ -1,0 +1,91 @@
+/* ==========================================================================
+   CORREÇÃO CRUCIAL PARA O EFEITO FADE (Garante que a foto apareça)
+   ========================================================================== */
+
+/* Força as estruturas internas do Swiper a herdarem a altura do container */
+.swiper, 
+.swiper-wrapper, 
+.swiper-slide {
+  width: 100% !important;
+  height: 450px !important; /* Altere aqui a altura que preferir para o banner */
+}
+
+.swiper {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   CONTEÚDO DO SLIDE
+   ========================================================================== */
+
+/* O conteúdo do slide precisa ocupar 100% do Swiper */
+.slide-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Força a imagem a cobrir o fundo sem distorcer e sem vazar */
+.slide-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* O overlay precisa ser ABSOLUTO para fixar no rodapé de CADA slide */
+.slide-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 30px 25px 30px;
+  
+  /* Um degradê escuro no fundo para o texto sempre ficar legível */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+  
+  display: flex;
+  align-items: flex-end;
+  box-sizing: border-box;
+  z-index: 2; /* Garante que o texto fique por cima de qualquer efeito */
+}
+
+/* ==========================================================================
+   ESTILIZAÇÃO DOS ELEMENTOS (Seu CSS Original)
+   ========================================================================== */
+
+.slide-overlay span {
+  font-size: 2.5rem; 
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+}
+
+/* Customização das Setas */
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important;
+  transition: all 0.3s ease;
+  z-index: 10; /* Mantém as setas clicáveis sobre o fade */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  transform: scale(1.2);
+}
+
+/* Paginação */
+.swiper-pagination-bullet {
+  background: white !important;
+  opacity: 0.5;
+  transition: all 0.3s ease; 
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 25px !important;
+  border-radius: 10px;
+}

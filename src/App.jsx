@@ -3,6 +3,8 @@ import { Header } from './components/Header';
 import { CarrosCard } from './components/Card';
 import { carrosData } from './data/carros';
 import { CarsModal } from "./components/CarsModal";
+import Slider from "./components/Slider"; 
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./App.css";
@@ -14,6 +16,7 @@ function App() {
   const [favorites, setFavorites] = useState([]); 
   const [selectedCar, setSelectedCar] = useState(null);
 
+  // Filtra os carros de acordo com a busca e a aba ativa
   const filtredCars = carrosData
     .filter((car) =>
       car.title.toLowerCase().includes(search.toLowerCase())
@@ -22,6 +25,7 @@ function App() {
       activeTab === 'dash' || (activeTab === 'favorites' && favorites.includes(car.id))
     );
 
+  // Gerencia o estado de favoritar/desfavoritar
   const toggleFavorite = (id) => {
     setFavorites((prev) =>
       prev.includes(id)
@@ -30,6 +34,7 @@ function App() {
     );
   };
 
+  // Inicializa a biblioteca de animações (AOS)
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -37,6 +42,14 @@ function App() {
       once: false,
     });
   }, []);
+
+  // Configurações do Swiper passadas por propriedade
+  const sliderSettings = {
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+  };
 
   return (
     <div className="apex-app">
@@ -49,10 +62,17 @@ function App() {
           openSearch={openSearch} 
           activeTab={activeTab} 
           setActiveTab={setActiveTab}
-          
         />
         
         <div className="apex-content">
+          
+          {/* Renderiza o Slider apenas na aba Dashboard */}
+          {activeTab === "dash" && (
+            <div className="container-slider">
+              <Slider settings={sliderSettings} data={carrosData} />
+            </div>
+          )}
+
           <h2 className="section-title">
             {activeTab === 'dash' && 'Carros disponíveis'}
             {activeTab === 'favorites' && 'Favoritos'}
@@ -60,7 +80,6 @@ function App() {
           </h2>
           
           <div className="apex-grid">
-            
             {filtredCars.length > 0 ? (
               filtredCars.map((g, index) => (
                 <CarrosCard
@@ -76,16 +95,17 @@ function App() {
                 />
               ))
             ) : (
-              <p style={{ textAlign: 'center', marginTop: '50px' }}>
+              <p style={{ textAlign: 'center', marginTop: '50px', width: '100%', gridColumn: '1 / -1' }}>
                 {activeTab === 'dash' && 'Nenhum carro encontrado'}
                 {activeTab === 'favorites' && 'Nenhum favorito ainda'}
-                {activeTab === 'favorites' && 'nenhum favorito ainda'}
                 {activeTab === 'ajuda' && 'Problemas com o site? Contate o suporte'}
               </p>
             )}
           </div>
         </div>
       </main>
+
+      {/* Modal de visualização/compra do carro */}
       <CarsModal car={selectedCar} onClose={() => setSelectedCar(null)} />
     </div>
   );
