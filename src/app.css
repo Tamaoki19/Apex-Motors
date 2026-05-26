@@ -1,6 +1,4 @@
-/* ==========================================================================
-   ESTRUTURA PRINCIPAL (Apex) - Blindada para Produção/GitHub
-   ========================================================================== */
+
 
 .apex-app {
   display: flex !important; /* Força o comportamento flex mesmo buildado */
@@ -17,9 +15,7 @@
   min-width: 0 !important; /* Evita que o swiper estufe o layout pós-build */
 }
 
-/* ==========================================================================
-   CONTAINER DO CARROSSEL
-   ========================================================================== */
+
 
 .container-slider {
   width: 100% !important;
@@ -28,9 +24,7 @@
   min-width: 0 !important;
 }
 
-/* ==========================================================================
-   CONTEÚDO E O GRID (Onde o GitHub quebrou)
-   ========================================================================== */
+
 
 .apex-content {
   padding: 40px;
@@ -44,7 +38,6 @@
   padding-left: 10px;
 }
 
-/* Corrigindo e forçando o Grid a não aceitar empilhamento do build */
 .apex-grid {
   display: grid !important;
   /* Força o navegador a criar colunas reais e impede listas verticais espalhadas */

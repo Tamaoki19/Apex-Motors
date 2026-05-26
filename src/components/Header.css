@@ -13,12 +13,17 @@
 
 
 .logo {
-    color: #DC143C;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: bold;
+  font-size: 1.8rem;         
+  font-weight: 800;           
+  color: #ffffff;            
+  text-transform: uppercase;  
+  letter-spacing: 1px;       
+  display: inline-block;      
+}
+
+
+.logo .logo-dot {
+  color: #ff0000;             
 }
 
 

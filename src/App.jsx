@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import { CarrosCard } from './components/Card';
 import { carrosData } from './data/carros';
 import { CarsModal } from "./components/CarsModal";
+import { Footer } from './components/Footer';
 import Slider from "./components/Slider"; 
 
 import AOS from "aos";
@@ -103,7 +104,11 @@ function App() {
             )}
           </div>
         </div>
+        <footer>
+        <Footer />
+      </footer>
       </main>
+      
 
       {/* Modal de visualização/compra do carro */}
       <CarsModal car={selectedCar} onClose={() => setSelectedCar(null)} />

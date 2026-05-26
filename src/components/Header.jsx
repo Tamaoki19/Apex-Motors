@@ -7,9 +7,11 @@ export function Header({ search, setSearch, openSearch, setOpenSearch, activeTab
     return ( 
         <header className='apex-header'>
             <div style={{ display: 'flex', alignItems: 'center', gap: '40px' }}>
-                <div className="logo">Apex Motors</div>
+                <span className="logo">Apex
+                    <span className="logo-dot">Motors</span>
+                    </span>
                 <div className="user-info">
-                    <h3>Bem-vindo, <span className="destaque">Ricardo</span></h3>
+                    <h3>Bem-vindo, <span className="destaque">Usuário</span></h3>
                 </div>
             </div>
 
