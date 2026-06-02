@@ -5,6 +5,8 @@ import { carrosData } from './data/carros';
 import { CarsModal } from "./components/CarsModal";
 import { Footer } from './components/Footer';
 import Slider from "./components/Slider"; 
+import { toast, ToastContainer, Zoom } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -28,6 +30,17 @@ function App() {
 
   // Gerencia o estado de favoritar/desfavoritar
   const toggleFavorite = (id) => {
+    const car = carrosData.find((g) => g.id === id);
+      const carTitle = car ? car.title : "Carro";
+
+      const isFavorite = favorites.includes(id);
+      if (isFavorite) {
+        toast.warn(`Carro removido dos favoritos: ${carTitle}`, { theme: "dark" });
+      }
+      else {
+        toast.success(`Carro adicionado aos favoritos: ${carTitle}`, { theme: "dark" });
+      }
+
     setFavorites((prev) =>
       prev.includes(id)
         ? prev.filter((favId) => favId !== id)
@@ -112,6 +125,19 @@ function App() {
 
       {/* Modal de visualização/compra do carro */}
       <CarsModal car={selectedCar} onClose={() => setSelectedCar(null)} />
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition={Zoom}
+      />
     </div>
   );
 }
