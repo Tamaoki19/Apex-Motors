@@ -1,5 +1,5 @@
 import mazda from '../assets/mazda-rx7.jpg';
-import AudiTT from '../assets/audiTT.jpg';
+import AudiTT from '../assets/AudiTT.jpg';
 import Volvo from '../assets/volvo-xc90-2025.jpg';
 import mercedes from '../assets/Mercedes-Benz.jpg';
 import skyline from '../assets/SkylineR35.jpg';
